@@ -47,15 +47,15 @@ class Sort {
             i < sortedArray[middle];
             i++) {
           if (searchElement == sortedArray[i]) {
-            return ' $searchElement found at index ${sortedArray.indexOf(sortedArray[i])}';
+            return ' $searchElement found at index ${inputArray.indexOf(sortedArray[i])}';
             // print(sortedArray.indexOf(sortedArray[i]));
           }
         }
         throw NotFoundFailure('element not found');
       }
+    } else {
+      return 'element found at index ${sortedArray.indexOf(searchElement)} ';
     }
-
-    return null;
   }
 }
 

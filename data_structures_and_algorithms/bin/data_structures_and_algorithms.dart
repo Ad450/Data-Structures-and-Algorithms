@@ -4,5 +4,5 @@ void main(List<String> arguments) {
   ///trial array
   var trialArray = [2, 15, 1, 3, 6, 8, 9];
 
-  print(Sort().call(trialArray, 4));
+  print(Sort().call(trialArray, 6));
 }
