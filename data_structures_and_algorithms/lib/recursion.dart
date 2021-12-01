@@ -11,14 +11,17 @@
 /// if the array has one or less element we add the remaining element to the total
 
 int sum(List<int> array) {
-  var base = array.first;
   var total = 0;
-  array.removeAt(0);
+  if (array.isNotEmpty) {
+    var base = array.first;
 
-  if (array.length > 1) {
-    total = base + sum(array);
-  } else {
-    total = base + array[0];
+    array.removeAt(0);
+
+    if (array.length > 1) {
+      total = base + sum(array);
+    } else {
+      total = base + array[0];
+    }
   }
 
   return total;
@@ -27,3 +30,26 @@ int sum(List<int> array) {
 // [1,3,4,5,5]
 // 1 + [3,4,5,5]
 // 1+ 3+ []
+
+/// counting the number of items in an array
+///
+///
+///
+///
+///
+
+int countElements(List<int> array) {
+  var totalCount = 0;
+
+  if (array.isNotEmpty) {
+    var base = array.first;
+    array.removeAt(base);
+    totalCount++;
+
+    if (array.isNotEmpty) {
+      totalCount = totalCount + countElements(array);
+    }
+  }
+
+  return totalCount;
+}
